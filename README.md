@@ -9,7 +9,7 @@ Welcome to your follow-up transitions lab! Instead of separate playgrounds, you'
 This lab uses transitions as a **lens** to deepen your understanding of:
 
 - **CSS Grid & Box Model**: How spacing, sizing, and layout work together
-- **Flexbox & Typography**: Creating hierarchical, readable content layouts  
+- **Flexbox & Typography**: Creating hierarchical, readable content layouts
 - **The Cascade**: How CSS rules combine and override each other
 - **Browser Mechanics**: Getting hints about how CSS files become visual interfaces
 - **Transition Integration**: Bringing smooth interactions to real-world layouts
@@ -26,6 +26,7 @@ This lab uses transitions as a **lens** to deepen your understanding of:
 Instead of separate playgrounds, you'll build one interface through 3 focused phases:
 
 ### Phase 1: Foundation & Grid Layout (25 minutes)
+
 **Learning Focus**: Project structure, CSS Grid, Box Model integration
 
 - Understand how HTML and CSS files work together
@@ -33,7 +34,8 @@ Instead of separate playgrounds, you'll build one interface through 3 focused ph
 - Apply box model principles for proper spacing
 - Add visual indicators for different dream types
 
-### Phase 2: Content Layout & Typography (30 minutes)  
+### Phase 2: Content Layout & Typography (30 minutes)
+
 **Learning Focus**: Flexbox, Typography hierarchy, Advanced selectors
 
 - Structure the internal layout of each dream card
@@ -42,6 +44,7 @@ Instead of separate playgrounds, you'll build one interface through 3 focused ph
 - Apply the cascade to create consistent but varied styling
 
 ### Phase 3: Interactive States & Transitions (35 minutes)
+
 **Learning Focus**: State management, Smooth transitions, User experience
 
 - Add hover and focus states that reveal card details
@@ -73,18 +76,21 @@ dreams-dashboard/
 ## 🔧 Getting Unstuck
 
 ### If your layout looks broken:
+
 1. **Check the browser console** (Right-click → Inspect → Console) for CSS errors
 2. **Verify CSS syntax** - missing semicolons and typos are common
 3. **Use browser dev tools** - Right-click on elements to inspect their styles
 4. **Try one change at a time** - comment out recent changes to isolate issues
 
 ### If transitions aren't working:
+
 1. **Transition goes on the base element**, not the `:hover` state
 2. **Check property names** - `background-color` not `background`
 3. **Verify the trigger** - are you hovering the right element?
 4. **Test without transitions first** - make sure the property change works
 
 ### If you're confused about concepts:
+
 1. **Read the explanatory comments** - they contain key insights about how CSS systems work together
 2. **Experiment with individual properties** - comment out other styles to isolate effects
 3. **Use your browser's responsive design mode** - see how your grid adapts to different sizes
@@ -92,6 +98,7 @@ dreams-dashboard/
 ## 📚 Key Concepts Reinforced
 
 ### CSS Grid Integration
+
 ```css
 .dreams-grid {
   display: grid;
@@ -101,15 +108,17 @@ dreams-dashboard/
 ```
 
 ### Box Model in Action
+
 ```css
 .dream-card {
-  padding: 1.5rem;        /* Space inside the card */
-  margin: 0;              /* Space outside (handled by grid gap) */
-  border-radius: 12px;    /* Affects the entire card boundary */
+  padding: 1.5rem; /* Space inside the card */
+  margin: 0; /* Space outside (handled by grid gap) */
+  border-radius: 12px; /* Affects the entire card boundary */
 }
 ```
 
 ### Flexbox for Internal Layout
+
 ```css
 .dream-header {
   display: flex;
@@ -119,9 +128,12 @@ dreams-dashboard/
 ```
 
 ### Transitions with Layout Properties
+
 ```css
 .dream-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .dream-card:hover {
   transform: translateY(-4px);

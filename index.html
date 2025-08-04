@@ -1,122 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dreams Dashboard - CSS Transitions Follow-up</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <link rel="stylesheet" href="solutions/styles-complete.css" />
+  </head>
+  <body>
     <div class="dashboard">
-        <header class="dashboard-header">
-            <h1>🌙 Your Dreams Dashboard</h1>
-            <p class="subtitle">Track your past adventures and schedule future dreams</p>
-        </header>
+      <header class="dashboard-header">
+        <h1>🌙 Your Dreams Dashboard</h1>
+        <p class="subtitle">Track your past adventures and schedule future dreams</p>
+      </header>
 
-        <main class="dashboard-main">
-            <section class="dreams-grid">
-                <!-- Past Dreams -->
-                <article class="dream-card past-dream adventure-dream">
-                    <div class="dream-header">
-                        <h3 class="dream-title">Flying Over Madagascar</h3>
-                        <span class="dream-date">3 nights ago</span>
-                    </div>
-                    <p class="dream-description">Soaring above the baobab trees, watching lemurs wave from below. The wind carried the scent of ylang-ylang flowers.</p>
-                    <div class="dream-tags">
-                        <span class="tag adventure">Adventure</span>
-                        <span class="tag location">Madagascar</span>
-                    </div>
-                </article>
+      <main class="dashboard-main">
+        <section class="dreams-grid">
+          <!-- Past Dreams -->
+          <article class="dream-card past-dream adventure-dream">
+            <div class="dream-header">
+              <h3 class="dream-title">Flying Over Madagascar</h3>
+              <span class="dream-date">3 nights ago</span>
+            </div>
+            <p class="dream-description">
+              Soaring above the baobab trees, watching lemurs wave from below. The wind carried the scent of ylang-ylang
+              flowers.
+            </p>
+            <div class="dream-tags">
+              <span class="tag adventure">Adventure</span>
+              <span class="tag location">Madagascar</span>
+            </div>
+          </article>
 
-                <article class="dream-card past-dream learning-dream">
-                    <div class="dream-header">
-                        <h3 class="dream-title">Teaching Code to Lemurs</h3>
-                        <span class="dream-date">1 week ago</span>
-                    </div>
-                    <p class="dream-description">In a forest classroom, ring-tailed lemurs sat attentively as I explained CSS Grid. They were surprisingly good at debugging!</p>
-                    <div class="dream-tags">
-                        <span class="tag learning">Learning</span>
-                        <span class="tag funny">Funny</span>
-                    </div>
-                </article>
+          <article class="dream-card past-dream learning-dream">
+            <div class="dream-header">
+              <h3 class="dream-title">Teaching Code to Lemurs</h3>
+              <span class="dream-date">1 week ago</span>
+            </div>
+            <p class="dream-description">
+              In a forest classroom, ring-tailed lemurs sat attentively as I explained CSS Grid. They were surprisingly
+              good at debugging!
+            </p>
+            <div class="dream-tags">
+              <span class="tag learning">Learning</span>
+              <span class="tag funny">Funny</span>
+            </div>
+          </article>
 
-                <article class="dream-card past-dream adventure-dream recurring-dream">
-                    <div class="dream-header">
-                        <h3 class="dream-title">Debugging in Zero Gravity</h3>
-                        <span class="dream-date">Recurring</span>
-                    </div>
-                    <p class="dream-description">Floating through space stations, fixing code that drifts around like stardust. The syntax highlighting looks beautiful against the cosmos.</p>
-                    <div class="dream-tags">
-                        <span class="tag adventure">Adventure</span>
-                        <span class="tag recurring">Recurring</span>
-                        <span class="tag space">Space</span>
-                    </div>
-                </article>
+          <article class="dream-card past-dream adventure-dream recurring-dream">
+            <div class="dream-header">
+              <h3 class="dream-title">Debugging in Zero Gravity</h3>
+              <span class="dream-date">Recurring</span>
+            </div>
+            <p class="dream-description">
+              Floating through space stations, fixing code that drifts around like stardust. The syntax highlighting
+              looks beautiful against the cosmos.
+            </p>
+            <div class="dream-tags">
+              <span class="tag adventure">Adventure</span>
+              <span class="tag recurring">Recurring</span>
+              <span class="tag space">Space</span>
+            </div>
+          </article>
 
-                <!-- Future Dreams -->
-                <article class="dream-card future-dream learning-dream">
-                    <div class="dream-header">
-                        <h3 class="dream-title">Master Advanced CSS Grid</h3>
-                        <span class="dream-date">Scheduled: Tonight</span>
-                    </div>
-                    <p class="dream-description">Tonight I'll dream of creating perfect layouts with complex grid areas and responsive design patterns.</p>
-                    <div class="dream-tags">
-                        <span class="tag learning">Learning</span>
-                        <span class="tag css">CSS</span>
-                    </div>
-                </article>
+          <!-- Future Dreams -->
+          <article class="dream-card future-dream learning-dream">
+            <div class="dream-header">
+              <h3 class="dream-title">Master Advanced CSS Grid</h3>
+              <span class="dream-date">Scheduled: Tonight</span>
+            </div>
+            <p class="dream-description">
+              Tonight I'll dream of creating perfect layouts with complex grid areas and responsive design patterns.
+            </p>
+            <div class="dream-tags">
+              <span class="tag learning">Learning</span>
+              <span class="tag css">CSS</span>
+            </div>
+          </article>
 
-                <article class="dream-card future-dream adventure-dream">
-                    <div class="dream-header">
-                        <h3 class="dream-title">Build Apps for Lemurs</h3>
-                        <span class="dream-date">Scheduled: This weekend</span>
-                    </div>
-                    <p class="dream-description">Create a mobile app that helps lemurs track their favorite fruits and coordinate group foraging expeditions.</p>
-                    <div class="dream-tags">
-                        <span class="tag adventure">Adventure</span>
-                        <span class="tag project">Project</span>
-                    </div>
-                </article>
+          <article class="dream-card future-dream adventure-dream">
+            <div class="dream-header">
+              <h3 class="dream-title">Build Apps for Lemurs</h3>
+              <span class="dream-date">Scheduled: This weekend</span>
+            </div>
+            <p class="dream-description">
+              Create a mobile app that helps lemurs track their favorite fruits and coordinate group foraging
+              expeditions.
+            </p>
+            <div class="dream-tags">
+              <span class="tag adventure">Adventure</span>
+              <span class="tag project">Project</span>
+            </div>
+          </article>
 
-                <article class="dream-card future-dream peaceful-dream recurring-dream">
-                    <div class="dream-header">
-                        <h3 class="dream-title">Sunday Morning Lemur Brunch</h3>
-                        <span class="dream-date">Recurring: Sundays</span>
-                    </div>
-                    <p class="dream-description">Peaceful gatherings where lemurs and humans share fresh fruit and discuss the week's coding challenges over hibiscus tea.</p>
-                    <div class="dream-tags">
-                        <span class="tag peaceful">Peaceful</span>
-                        <span class="tag recurring">Recurring</span>
-                        <span class="tag social">Social</span>
-                    </div>
-                </article>
+          <article class="dream-card future-dream peaceful-dream recurring-dream">
+            <div class="dream-header">
+              <h3 class="dream-title">Sunday Morning Lemur Brunch</h3>
+              <span class="dream-date">Recurring: Sundays</span>
+            </div>
+            <p class="dream-description">
+              Peaceful gatherings where lemurs and humans share fresh fruit and discuss the week's coding challenges
+              over hibiscus tea.
+            </p>
+            <div class="dream-tags">
+              <span class="tag peaceful">Peaceful</span>
+              <span class="tag recurring">Recurring</span>
+              <span class="tag social">Social</span>
+            </div>
+          </article>
 
-                <!-- Placeholder dreams for students to customize -->
-                <article class="dream-card past-dream adventure-dream">
-                    <div class="dream-header">
-                        <h3 class="dream-title">Your Adventure Dream</h3>
-                        <span class="dream-date">[Add your date]</span>
-                    </div>
-                    <p class="dream-description">[Describe an adventure you dreamed about or would like to dream about]</p>
-                    <div class="dream-tags">
-                        <span class="tag adventure">Adventure</span>
-                        <span class="tag">[Your tag]</span>
-                    </div>
-                </article>
+          <!-- Placeholder dreams for students to customize -->
+          <article class="dream-card past-dream adventure-dream">
+            <div class="dream-header">
+              <h3 class="dream-title">Your Adventure Dream</h3>
+              <span class="dream-date">[Add your date]</span>
+            </div>
+            <p class="dream-description">[Describe an adventure you dreamed about or would like to dream about]</p>
+            <div class="dream-tags">
+              <span class="tag adventure">Adventure</span>
+              <span class="tag">[Your tag]</span>
+            </div>
+          </article>
 
-                <article class="dream-card future-dream learning-dream">
-                    <div class="dream-header">
-                        <h3 class="dream-title">Your Learning Dream</h3>
-                        <span class="dream-date">[When do you want to dream this?]</span>
-                    </div>
-                    <p class="dream-description">[What would you like to learn or master in your dreams?]</p>
-                    <div class="dream-tags">
-                        <span class="tag learning">Learning</span>
-                        <span class="tag">[Your subject]</span>
-                    </div>
-                </article>
-            </section>
-        </main>
+          <article class="dream-card future-dream learning-dream">
+            <div class="dream-header">
+              <h3 class="dream-title">Your Learning Dream</h3>
+              <span class="dream-date">[When do you want to dream this?]</span>
+            </div>
+            <p class="dream-description">[What would you like to learn or master in your dreams?]</p>
+            <div class="dream-tags">
+              <span class="tag learning">Learning</span>
+              <span class="tag">[Your subject]</span>
+            </div>
+          </article>
+        </section>
+      </main>
     </div>
-</body>
+  </body>
 </html>

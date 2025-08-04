@@ -1,0 +1,273 @@
+/* ==========================================================================
+   Dreams Dashboard - Complete Solution Reference
+   This file shows all styles uncommented and working together
+   ========================================================================== */
+
+:root {
+    --dashboard-bg: #0f0f23;
+    --card-bg: #ffffff;
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --text-light: #bdc3c7;
+    
+    --adventure-color: #e74c3c;
+    --learning-color: #3498db;
+    --peaceful-color: #27ae60;
+    --funny-color: #f39c12;
+    --recurring-color: #9b59b6;
+    --nightmare-color: #8e44ad;
+    
+    --card-padding: 1.5rem;
+    --card-border-radius: 12px;
+    --grid-gap: 1.5rem;
+    
+    --transition-quick: 0.2s ease-out;
+    --transition-smooth: 0.3s ease-in-out;
+    --transition-slow: 0.5s ease;
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--dashboard-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: fadeIn var(--transition-slow) ease-out;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.dashboard-header h1 {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* Grid layout */
+.dreams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--grid-gap);
+}
+
+/* Card styling */
+.dream-card {
+    background: var(--card-bg);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: var(--card-padding);
+    cursor: pointer;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), opacity var(--transition-smooth);
+    opacity: 1;
+    tabindex: 0;
+}
+
+.dream-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dream-card:focus {
+    outline: 2px solid var(--learning-color);
+    outline-offset: 2px;
+    transform: translateY(-2px);
+}
+
+/* Dream type indicators */
+.past-dream {
+    border-left: 4px solid var(--text-secondary);
+}
+
+.future-dream {
+    border-left: 4px solid var(--learning-color);
+}
+
+.recurring-dream {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(155, 89, 182, 0.05) 100%);
+}
+
+/* Card content layout */
+.dream-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+
+.dream-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    flex: 1 0 auto;
+    transition: color var(--transition-quick);
+}
+
+.dream-card:hover .dream-title {
+    color: var(--learning-color);
+}
+
+.dream-date {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.dream-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+/* Tags */
+.dream-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    background: var(--text-secondary);
+    color: white;
+    text-transform: lowercase;
+    flex-shrink: 0;
+    transition: background-color var(--transition-quick), transform var(--transition-quick);
+}
+
+.tag:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Dream type specific styling */
+.adventure-dream {
+    box-shadow: 0 2px 10px rgba(231, 76, 60, 0.1);
+}
+
+.adventure-dream:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(231, 76, 60, 0.2);
+}
+
+.adventure .tag {
+    background: var(--adventure-color);
+}
+
+.adventure .tag:hover {
+    background-color: #c0392b;
+}
+
+.learning-dream {
+    box-shadow: 0 2px 10px rgba(52, 152, 219, 0.1);
+}
+
+.learning-dream:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.2);
+}
+
+.learning .tag {
+    background: var(--learning-color);
+}
+
+.learning .tag:hover {
+    background-color: #2980b9;
+}
+
+.peaceful-dream {
+    box-shadow: 0 2px 10px rgba(39, 174, 96, 0.1);
+}
+
+.peaceful-dream:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
+}
+
+.peaceful .tag {
+    background: var(--peaceful-color);
+}
+
+.funny .tag {
+    background: var(--funny-color);
+}
+
+.recurring .tag {
+    background: var(--recurring-color);
+}
+
+/* Nightmare dream styling (bonus) */
+.nightmare-dream {
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    border-left: 4px solid var(--nightmare-color);
+    color: #e0e0e0;
+}
+
+.nightmare-dream:hover {
+    transform: translateY(-2px) rotate(0.5deg);
+    box-shadow: 0 8px 20px rgba(142, 68, 173, 0.3);
+}
+
+.nightmare-dream .dream-title {
+    color: #f8f8f8;
+}
+
+.nightmare-dream .dream-description {
+    color: #d0d0d0;
+}
+
+.nightmare .tag {
+    background: var(--nightmare-color);
+    color: #f8f8f8;
+}
+
+.nightmare .tag:hover {
+    background-color: #6c2d8f;
+}
+
+/* Performance and accessibility */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

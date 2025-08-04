@@ -1,0 +1,680 @@
+/* ==========================================================================
+   Dreams Dashboard - CSS Transitions Follow-up Lab
+   ========================================================================== */
+
+/* Custom Properties - Feel free to customize these colors to match your dreams! */
+:root {
+    /* Base colors */
+    --dashboard-bg: #0f0f23;
+    --card-bg: #ffffff;
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --text-light: #bdc3c7;
+    
+    /* Dream type colors - customize these to match how different dreams feel to you */
+    --adventure-color: #e74c3c;
+    --learning-color: #3498db;
+    --peaceful-color: #27ae60;
+    --funny-color: #f39c12;
+    --recurring-color: #9b59b6;
+    
+    /* Spacing and sizing */
+    --card-padding: 1.5rem;
+    --card-border-radius: 12px;
+    --grid-gap: 1.5rem;
+    
+    /* Transition timing - experiment with these! */
+    --transition-quick: 0.2s ease-out;
+    --transition-smooth: 0.3s ease-in-out;
+    --transition-slow: 0.5s ease;
+}
+
+/* ==========================================================================
+   FOUNDATION PHASE: Project Setup & Grid Layout
+   
+   🎯 Learning Focus: Understanding how files work together + CSS Grid + Box Model
+   ⏱️ Time: ~25 minutes
+   ========================================================================== */
+
+/* 
+   Welcome to your Dreams Dashboard! 
+   
+   Before we start styling, let's understand what we're working with:
+   
+   📁 Project Structure:
+   - index.html (contains your dreams content)
+   - css/styles.css (this file - where the magic happens)
+   - Your browser reads the HTML, sees the <link> tag, fetches this CSS file
+   - The browser then applies these styles to create the visual result
+   
+   This is the same pattern you'll use in professional web development!
+*/
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--dashboard-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Dashboard container */
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header styling */
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.dashboard-header h1 {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   🎯 TASK 1: Create the Dreams Grid Layout
+   
+   Your dreams need to be arranged in a responsive grid. Let's use CSS Grid
+   to create a layout that adapts to different screen sizes.
+   
+   🔍 Box Model Integration: Notice how padding, margins, and gaps work together
+   ========================================================================== */
+
+/* TODO: Complete the .dreams-grid styles below */
+.dreams-grid {
+    /* Uncomment and experiment with these grid properties: */
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    /* gap: var(--grid-gap); */
+    
+    /* 
+    💡 Questions to explore:
+    - What happens if you change minmax(300px, 1fr) to minmax(250px, 1fr)?
+    - How does the gap value affect the spacing between cards?
+    - Try viewing this in a narrow browser window - what happens?
+    */
+}
+
+/* ==========================================================================
+   🎯 TASK 2: Style the Dream Cards (Box Model Focus)
+   
+   Each dream card needs proper spacing and visual separation.
+   This is where the box model really matters!
+   ========================================================================== */
+
+.dream-card {
+    /* Background and basic appearance */
+    background: var(--card-bg);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+    /* TODO: Add padding using our CSS custom property */
+    /* padding: var(--card-padding); */
+    
+    /* We'll add transitions here in Phase 3! */
+    /* cursor: pointer; */
+    
+    /*
+    🔍 Box Model Exploration:
+    - The padding creates space INSIDE the card
+    - The margin (from grid gap) creates space OUTSIDE the card  
+    - The border-radius affects the entire card boundary
+    - Try temporarily adding a border: 2px solid red; to see the card boundaries
+    */
+}
+
+/* ==========================================================================
+   🎯 TASK 3: Dream Type Visual Indicators
+   
+   Different types of dreams should have different visual treatments.
+   This introduces the cascade and specificity concepts!
+   ========================================================================== */
+
+/* Past dreams get a subtle left border */
+.past-dream {
+    /* TODO: Add a subtle left border */
+    /* border-left: 4px solid var(--text-secondary); */
+}
+
+/* Future dreams get a different border treatment */
+.future-dream {
+    /* TODO: Add a left border with a different color */
+    /* border-left: 4px solid var(--learning-color); */
+}
+
+/* Recurring dreams get special styling */
+.recurring-dream {
+    /* TODO: Add a subtle background tint for recurring dreams */
+    /* background: linear-gradient(135deg, var(--card-bg) 0%, rgba(155, 89, 182, 0.05) 100%); */
+}
+
+/* ==========================================================================
+   Save your work and open index.html in your browser!
+   
+   🎯 What you should see:
+   - Dreams arranged in a responsive grid
+   - Cards with proper spacing and backgrounds
+   - Different visual indicators for past/future/recurring dreams
+   
+   🎯 Next: Uncomment the styles above and refresh to see the changes
+   
+   📝 Reflection Questions:
+   - How do the CSS custom properties make it easy to maintain consistent spacing?
+   - What happens to the grid layout when you resize your browser window?
+   - How does the box model create the visual hierarchy between cards?
+   ========================================================================== */
+
+/* ==========================================================================
+   PHASE 2: Content Layout & Typography
+   
+   🎯 Learning Focus: Flexbox + Typography + Cascade
+   ⏱️ Time: ~30 minutes
+   ========================================================================== */
+
+/*
+   Now that our cards are properly laid out, let's focus on the INSIDE of each card.
+   
+   This is where Flexbox shines - it's perfect for arranging content within containers.
+   We'll also explore typography relationships and how the cascade works.
+*/
+
+/* ==========================================================================
+   🎯 TASK 4: Dream Card Internal Layout (Flexbox Focus)
+   
+   Each card needs internal structure. Flexbox helps us create flexible, 
+   responsive layouts inside each card.
+   ========================================================================== */
+
+.dream-header {
+    /* TODO: Create a flexible header layout */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: baseline; */
+    /* margin-bottom: 1rem; */
+    
+    /*
+    🔍 Flexbox Exploration:
+    - justify-content: space-between pushes title and date apart
+    - align-items: baseline aligns text along their baseline
+    - Try changing baseline to center or flex-start - what happens?
+    */
+}
+
+.dream-title {
+    /* Typography hierarchy - this is the most important text */
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    
+    /* Allow title to grow but not shrink */
+    flex: 1 0 auto;
+}
+
+.dream-date {
+    /* Subtle, secondary information */
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    
+    /* Keep date compact */
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.dream-description {
+    /* Body text - comfortable reading */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    
+    /*
+    🔍 Typography Relationships:
+    - Notice how font-size creates hierarchy: title > description > date
+    - line-height affects readability - try changing it to 1.2 or 2.0
+    - margin-bottom creates space before the tags
+    */
+}
+
+/* ==========================================================================
+   🎯 TASK 5: Dream Tags Layout (More Flexbox + Cascade)
+   
+   Tags need to wrap nicely and have consistent styling.
+   This demonstrates both flexbox wrapping and cascade inheritance.
+   ========================================================================== */
+
+.dream-tags {
+    /* TODO: Create a flexible tag container */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* gap: 0.5rem; */
+    
+    /*
+    🔍 Flex Wrap Exploration:
+    - flex-wrap: wrap allows tags to move to new lines
+    - gap creates consistent spacing between tags
+    - Try adding more tags to see the wrapping in action
+    */
+}
+
+.tag {
+    /* Base tag styling - all tags inherit these styles */
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    background: var(--text-secondary);
+    color: white;
+    text-transform: lowercase;
+    
+    /* Prevent tags from shrinking too much */
+    flex-shrink: 0;
+    
+    /*
+    🔍 Cascade in Action:
+    - All .tag elements get these base styles
+    - More specific selectors below will override some properties
+    - This creates consistent styling with meaningful variations
+    */
+}
+
+/* ==========================================================================
+   🎯 TASK 6: Dream Type Specific Styling (Cascade & Specificity)
+   
+   Different dream types should have different colors.
+   This shows how the cascade and specificity work together.
+   ========================================================================== */
+
+/* Adventure dreams - bold and energetic */
+.adventure .tag {
+    background: var(--adventure-color);
+}
+
+/* Learning dreams - calm and focused */  
+.learning .tag {
+    background: var(--learning-color);
+}
+
+/* Peaceful dreams - gentle and soothing */
+.peaceful .tag {
+    background: var(--peaceful-color);
+}
+
+/* Funny dreams - bright and playful */
+.funny .tag {
+    background: var(--funny-color);
+}
+
+/* Recurring dreams - mysterious and special */
+.recurring .tag {
+    background: var(--recurring-color);
+}
+
+/* TODO: Experiment with your own dream type colors! */
+/*
+.your-dream-type .tag {
+    background: #your-color-here;
+}
+*/
+
+/* ==========================================================================
+   🎯 TASK 7: Enhanced Card Styling Based on Dream Types
+   
+   Let's use the cascade to create more sophisticated card variations.
+   This demonstrates how parent classes affect child elements.
+   ========================================================================== */
+
+/* Adventure dreams get a subtle accent */
+.adventure-dream {
+    /* TODO: Add a subtle box-shadow with the adventure color */
+    /* box-shadow: 0 2px 10px rgba(231, 76, 60, 0.1); */
+}
+
+/* Learning dreams get a different accent */
+.learning-dream {
+    /* TODO: Add a subtle box-shadow with the learning color */
+    /* box-shadow: 0 2px 10px rgba(52, 152, 219, 0.1); */
+}
+
+/* Peaceful dreams get their own treatment */
+.peaceful-dream {
+    /* TODO: Add a subtle box-shadow with the peaceful color */
+    /* box-shadow: 0 2px 10px rgba(39, 174, 96, 0.1); */
+}
+
+/*
+🔍 Cascade Understanding:
+- .dream-card sets the base box-shadow
+- .adventure-dream overrides it with a colored version
+- Both shadows use the same blur and spread, maintaining consistency
+- The color creates meaningful differentiation
+*/
+
+/* ==========================================================================
+   🎯 PERSONAL CUSTOMIZATION TIME!
+   
+   Now it's time to make this dashboard truly yours:
+   
+   1. Edit the HTML: Replace the placeholder dreams with your own dreams
+   2. Choose your colors: Modify the CSS custom properties at the top
+   3. Adjust typography: Change font sizes to match your preferences
+   4. Experiment with spacing: Try different padding and gap values
+   ========================================================================== */
+
+/* ==========================================================================
+   Phase 2 Complete! Save and refresh your browser.
+   
+   🎯 What you should now see:
+   - Dream cards with proper internal layout using flexbox
+   - Clear typography hierarchy (title > description > tags)
+   - Colorful, wrapped tags that reflect dream types
+   - Subtle color accents that differentiate dream categories
+   
+   📝 Reflection Questions:
+   - How does flexbox make the internal card layout flexible?
+   - What happens when you add more tags than fit on one line?
+   - How does the cascade let you create variations while maintaining consistency?
+   - Which dream type colors work best for your personal dreams?
+   
+   🎯 Ready for Phase 3? Let's add smooth interactions and transitions!
+   ========================================================================== */
+
+/* ==========================================================================
+   PHASE 3: Interactive States & Transitions
+   
+   🎯 Learning Focus: State management + Smooth transitions + User experience
+   ⏱️ Time: ~35 minutes
+   ========================================================================== */
+
+/*
+   Now for the magic! We'll add smooth transitions that make your dashboard
+   feel professional and responsive. This is where we bring together everything
+   you've learned about CSS properties and see how they can change over time.
+*/
+
+/* ==========================================================================
+   🎯 TASK 8: Basic Card Hover States (Transition Foundation)
+   
+   Let's start with simple but effective hover interactions.
+   This introduces how transitions work with layout properties.
+   ========================================================================== */
+
+.dream-card {
+    /* Add transition to the base element (not the :hover state!) */
+    /* TODO: Uncomment the transition below */
+    /* transition: transform var(--transition-smooth), box-shadow var(--transition-smooth); */
+    
+    /*
+    🔍 Why transitions go on the base element:
+    - The browser needs to know which properties to animate
+    - Transitions work both ways: on hover AND when hover ends
+    - This creates smooth "return" animations
+    */
+}
+
+.dream-card:hover {
+    /* TODO: Add hover effects */
+    /* transform: translateY(-4px); */
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); */
+    
+    /*
+    🔍 Transform vs Layout Properties:
+    - transform: translateY() moves the card without affecting other elements
+    - This is more performant than changing margin or position
+    - Try changing translateY(-4px) to translateY(-10px) - what feels better?
+    */
+}
+
+.dream-card:hover .dream-title {
+    /* TODO: Make titles slightly more prominent on hover */
+    /* color: var(--learning-color); */
+    /* transition: color var(--transition-quick); */
+    
+    /*
+    🔍 Nested Element Transitions:
+    - Child elements can have their own transitions
+    - This creates layered interaction effects
+    - The timing can be different from the parent element
+    */
+}
+
+/* ==========================================================================
+   🎯 TASK 9: Enhanced Tag Interactions (Complex State Changes)
+   
+   Let's make the tags more interactive and see how transitions work
+   with multiple properties changing simultaneously.
+   ========================================================================== */
+
+.tag {
+    /* Add transitions to tags for smooth color changes */
+    /* TODO: Add transition for smooth tag interactions */
+    /* transition: background-color var(--transition-quick), transform var(--transition-quick); */
+}
+
+.tag:hover {
+    /* TODO: Make tags more prominent when hovered */
+    /* transform: scale(1.05); */
+    /* cursor: pointer; */
+    
+    /*
+    🔍 Scale Transform:
+    - scale(1.05) makes the element 5% larger
+    - This is more performant than changing width/height
+    - Try different scale values - what feels most subtle yet noticeable?
+    */
+}
+
+/* Specific hover effects for different tag types */
+.adventure .tag:hover {
+    /* TODO: Adventure tags get more vibrant on hover */
+    /* background-color: #c0392b; */ /* Darker adventure color */
+}
+
+.learning .tag:hover {
+    /* TODO: Learning tags get more vibrant on hover */
+    /* background-color: #2980b9; */ /* Darker learning color */
+}
+
+/* ==========================================================================
+   🎯 TASK 10: Dream Type Specific Hover Effects (Advanced Transitions)
+   
+   Different dream types can have different interaction personalities!
+   This shows how to create variety while maintaining consistency.
+   ========================================================================== */
+
+/* Adventure dreams: Bold, energetic movements */
+.adventure-dream:hover {
+    /* TODO: Adventure dreams get more dramatic effects */
+    /* transform: translateY(-6px) scale(1.02); */
+    /* box-shadow: 0 12px 30px rgba(231, 76, 60, 0.2); */
+}
+
+/* Learning dreams: Gentle, focused interactions */
+.learning-dream:hover {
+    /* TODO: Learning dreams get subtle, calm effects */
+    /* transform: translateY(-3px); */
+    /* box-shadow: 0 6px 20px rgba(52, 152, 219, 0.2); */
+}
+
+/* Peaceful dreams: Soft, soothing movements */
+.peaceful-dream:hover {
+    /* TODO: Peaceful dreams get very gentle effects */
+    /* transform: translateY(-2px); */
+    /* box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2); */
+}
+
+/* ==========================================================================
+   🎯 TASK 11: Focus States (Accessibility + Transitions)
+   
+   Not everyone uses a mouse! Let's make sure keyboard users get the same
+   smooth interactions. This is professional-level accessibility.
+   ========================================================================== */
+
+.dream-card:focus {
+    /* TODO: Make focus states clear and accessible */
+    /* outline: 2px solid var(--learning-color); */
+    /* outline-offset: 2px; */
+    /* transform: translateY(-2px); */
+    
+    /*
+    🔍 Focus vs Hover:
+    - Focus is for keyboard navigation (tab key)
+    - Should be visually similar to hover but not identical
+    - outline is better than border for focus (doesn't affect layout)
+    */
+}
+
+/* Make cards focusable */
+.dream-card {
+    /* TODO: Make cards keyboard accessible */
+    /* tabindex="0" should be added to HTML, but we can style it here */
+}
+
+/* ==========================================================================
+   🎯 BONUS TASK: Create Your Own Nightmare Dream! 🕷️
+   
+   Time to get creative! Add a nightmare to your dreams dashboard.
+   This combines HTML editing + CSS creation + your own creativity.
+   
+   ⏱️ Time: ~15 minutes (bonus activity)
+   ========================================================================== */
+
+/*
+   🎯 Your Mission:
+   1. Add a new dream card to your HTML with class="dream-card past-dream nightmare-dream"
+   2. Create styling for nightmare dreams below
+   3. Make it feel appropriately spooky but not actually scary!
+   
+   💡 Ideas for nightmare styling:
+   - Darker colors or desaturated tones
+   - Different border treatments (maybe jagged or double borders?)
+   - Unique hover effects (shake, fade, color shifts?)
+   - Special tag colors for nightmare-related tags
+   
+   Remember: This is practice with the same CSS concepts, just with creative flair!
+*/
+
+/* TODO: Create your nightmare dream styling here! */
+/*
+.nightmare-dream {
+    /* Your nightmare base styling */
+    /* Maybe a darker background or special border? */
+}
+
+.nightmare-dream:hover {
+    /* Your nightmare hover effects */
+    /* Perhaps a subtle shake or color shift? */
+}
+
+.nightmare-dream .tag {
+    /* Special tag styling for nightmares */
+    /* Maybe desaturated colors or different shapes? */
+}
+
+.nightmare .tag {
+    /* If you create a "nightmare" tag type */
+    /* What color represents nightmares to you? */
+}
+*/
+
+/* ==========================================================================
+   🎯 TASK 12: Performance and Polish (Professional Touches)
+   
+   Let's add some final touches that make the interface feel complete.
+   This introduces performance considerations and professional polish.
+   ========================================================================== */
+
+/* Smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduce motion for users who prefer it (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Loading state styling (professional touch) */
+.dream-card {
+    /* Ensure cards don't flicker during page load */
+    /* TODO: Add opacity transition for smooth loading */
+    /* opacity: 1; */
+    /* transition: opacity var(--transition-smooth), transform var(--transition-smooth), box-shadow var(--transition-smooth); */
+}
+
+/* Optional: Add a subtle page load animation */
+.dashboard {
+    /* TODO: Fade in the entire dashboard */
+    /* animation: fadeIn var(--transition-slow) ease-out; */
+}
+
+/* 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+*/
+
+/* ==========================================================================
+   🎉 PHASE 3 COMPLETE! DASHBOARD FINISHED!
+   
+   🎯 What you've accomplished:
+   - Built a complete, responsive dreams dashboard
+   - Mastered CSS Grid for layout and Flexbox for content organization
+   - Applied the box model for consistent spacing and visual hierarchy
+   - Used typography to create clear information architecture
+   - Leveraged the cascade for efficient, maintainable styling
+   - Added smooth transitions that enhance user experience
+   - Created accessible interactions for all users
+   - [BONUS] Designed your own nightmare dream with custom styling!
+   
+   💡 Key Insights You've Gained:
+   - How CSS Grid, Flexbox, and Box Model work together in real layouts
+   - Why transitions belong on base elements, not hover states
+   - How the cascade lets you create variations while maintaining consistency
+   - The difference between transform (performant) and layout changes
+   - How CSS files become interactive interfaces in the browser
+   
+   📝 Final Reflection Questions:
+   - Which CSS concept felt most complex when you started vs. now?
+   - How do the different dream type styles demonstrate the cascade?
+   - What happens in the browser when you hover over a card?
+   - If you were to add a new dream type, how would you approach the styling?
+   
+   🚀 Extension Challenges (if you want to keep exploring):
+   - Add CSS animations for tag appearance
+   - Create a responsive sidebar navigation
+   - Implement a dark/light theme toggle using CSS custom properties
+   - Add micro-interactions for individual elements (dream dates, descriptions)
+   - Experiment with CSS Grid subgrid for more complex layouts
+   
+   🎉 Congratulations! You've built a professional-quality interface while 
+   mastering fundamental CSS concepts. Every interaction you see is the result 
+   of CSS properties transitioning smoothly from one state to another - and 
+   now you understand exactly how that magic happens!
+   ========================================================================== */

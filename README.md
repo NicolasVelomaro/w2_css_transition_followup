@@ -4,6 +4,8 @@
 
 Welcome to your follow-up transitions lab! Instead of separate playgrounds, you'll progressively build one cohesive dreams dashboard that integrates the core CSS concepts you've been learning: Grid, Flexbox, Box Model, Typography, and the Cascade.
 
+![Dream Dashboard Preview](assets/transition_followup_main.png)
+
 ## 🎯 What You'll Learn
 
 This lab uses transitions as a **lens** to deepen your understanding of:

@@ -165,7 +165,7 @@ body {
 /* Recurring dreams get special styling */
 .recurring-dream {
   /* TODO: Add a subtle background tint for recurring dreams */
-  /* background: linear-gradient(135deg, var(--card-bg) 0%, rgba(155, 89, 182, 0.03) 100%); */
+  /* background: linear-gradient(135deg, var(--card-bg) 0%, rgba(155, 89, 182, 0.2) 100%); */
 }
 
 /* ==========================================================================
@@ -230,6 +230,7 @@ body {
   font-weight: 600;
   color: var(--text-primary);
   margin: 0;
+  width: 100%;
 
   /* Allow title to grow but not shrink */
   flex: 1 0 auto;
@@ -308,6 +309,15 @@ body {
 
    Different dream types should have different colors.
    This shows how the cascade and specificity work together.
+
+   Something is wrong, the tags are not colored!
+   Can you figure out why the following styles are having no effect?
+   Check out the HTML structure and see what classes the tags have.
+
+   Hint: the selector `.adventure .tag` means "Find an element with the tag `class` which is a child of an element with class `adventure`".
+   What is the correct selector to select an element with BOTH of those tags?
+
+   Update all of the selectors below to correctly select each tag and color it.
    ========================================================================== */
 
 /* Adventure dreams - bold and energetic */
@@ -337,7 +347,7 @@ body {
 
 /* TODO: Experiment with your own dream type colors! */
 /*
-.your-dream-type .tag {
+.your-dream-type.tag {
     background: #your-color-here;
 }
 */
@@ -450,10 +460,14 @@ body {
     */
 }
 
-.dream-card:hover .dream-title {
+.dream-title {
+  /* TODO: Make the color of the title transition */
+  /* transition: color var(--transition-quick); */
+}
+
+.dream-card.dream-title {
   /* TODO: Make titles slightly more prominent on hover */
   /* color: var(--learning-color); */
-  /* transition: color var(--transition-quick); */
 
   /*
     🔍 Nested Element Transitions:
@@ -490,12 +504,12 @@ body {
 }
 
 /* Specific hover effects for different tag types */
-.adventure .tag:hover {
+.adventure.tag:hover {
   /* TODO: Adventure tags get more vibrant on hover */
   /* background-color: #c0392b; */ /* Darker adventure color */
 }
 
-.learning .tag:hover {
+.learning.tag:hover {
   /* TODO: Learning tags get more vibrant on hover */
   /* background-color: #2980b9; */ /* Darker learning color */
 }
@@ -529,10 +543,21 @@ body {
 }
 
 /* ==========================================================================
-   🎯 TASK 11: Focus States (Accessibility + Transitions)
+  🎯 TASK 11: Focus States (Accessibility + Transitions)
 
-   Not everyone uses a mouse! Let's make sure keyboard users get the same
-   smooth interactions. This is professional-level accessibility.
+  Not everyone uses a mouse! Let's make sure keyboard users get the same
+  smooth interactions.
+
+  Go to each dream card in `index.html` and add the attribute `tabindex="0"` to each `.dream-card` element.
+
+  Each card should look similar to this:
+    <article class="..." tabindex="0">
+      ...
+    </article>
+
+  This allows users to navigate to each card using the tab key.
+
+  You can test it out by saving your changes and opening index.html in the browser, then pressing tab multiple times to cycle through the dream cards.
    ========================================================================== */
 
 .dream-card:focus {
@@ -547,12 +572,6 @@ body {
     - Should be visually similar to hover but not identical
     - outline is better than border for focus (doesn't affect layout)
     */
-}
-
-/* Make cards focusable */
-.dream-card {
-  /* TODO: Make cards keyboard accessible */
-  /* tabindex="0" should be added to HTML, but we can style it here */
 }
 
 /* ==========================================================================
@@ -604,7 +623,6 @@ body {
    🎯 TASK 12: Performance and Polish (Professional Touches)
 
    Let's add some final touches that make the interface feel complete.
-   This introduces performance considerations and professional polish.
    ========================================================================== */
 
 /* Smooth scrolling for the whole page */
@@ -620,27 +638,6 @@ html {
     transition-duration: 0.01ms !important;
   }
 }
-
-/* Loading state styling (professional touch) */
-.dream-card {
-  /* Ensure cards don't flicker during page load */
-  /* TODO: Add opacity transition for smooth loading */
-  /* opacity: 1; */
-  /* transition: opacity var(--transition-smooth), transform var(--transition-smooth), box-shadow var(--transition-smooth); */
-}
-
-/* Optional: Add a subtle page load animation */
-.dashboard {
-  /* TODO: Fade in the entire dashboard */
-  /* animation: fadeIn var(--transition-slow) ease-out; */
-}
-
-/*
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-*/
 
 /* ==========================================================================
    🎉 PHASE 3 COMPLETE! DASHBOARD FINISHED!

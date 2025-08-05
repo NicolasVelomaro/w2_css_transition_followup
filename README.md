@@ -6,20 +6,10 @@ Welcome to your follow-up transitions lab! Instead of separate playgrounds, you'
 
 ![Dream Dashboard Preview](assets/transition_followup_main.png)
 
-## 🎯 What You'll Learn
-
-This lab uses transitions as a **lens** to deepen your understanding of:
-
-- **CSS Grid & Box Model**: How spacing, sizing, and layout work together
-- **Flexbox & Typography**: Creating hierarchical, readable content layouts
-- **The Cascade**: How CSS rules combine and override each other
-- **Browser Mechanics**: Getting hints about how CSS files become visual interfaces
-- **Transition Integration**: Bringing smooth interactions to real-world layouts
-
 ## 🚀 Getting Started
 
 1. **Open the project**: Start by opening `index.html` in your browser
-2. **Explore the HTML**: Look at the dream cards structure - you'll customize these!
+2. **Explore the HTML**: Open `index.html` in your code editor and look at the dream cards structure - you'll customize these!
 3. **Open the CSS**: Follow along in `css/styles.css` where you'll work
 4. **Work through phases**: Each phase builds on the previous one
 
@@ -73,7 +63,7 @@ dreams-dashboard/
 └── README.md           # This file
 ```
 
-**Key Insight**: This is the same file structure pattern used in professional web development. The browser reads your HTML, sees the `<link>` tag, fetches your CSS, and combines them to create the visual result you see.
+**Key Insight**: The browser reads your HTML, sees the `<link>` tag, fetches your CSS, and combines them to create the visual result you see.
 
 ## 🔧 Getting Unstuck
 
@@ -97,52 +87,6 @@ dreams-dashboard/
 2. **Experiment with individual properties** - comment out other styles to isolate effects
 3. **Use your browser's responsive design mode** - see how your grid adapts to different sizes
 
-## 📚 Key Concepts Reinforced
-
-### CSS Grid Integration
-
-```css
-.dreams-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-```
-
-### Box Model in Action
-
-```css
-.dream-card {
-  padding: 1.5rem; /* Space inside the card */
-  margin: 0; /* Space outside (handled by grid gap) */
-  border-radius: 12px; /* Affects the entire card boundary */
-}
-```
-
-### Flexbox for Internal Layout
-
-```css
-.dream-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-```
-
-### Transitions with Layout Properties
-
-```css
-.dream-card {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-.dream-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-```
-
 ## ⏱️ Time Breakdown
 
 - **Phase 1 (Foundation)**: 25 minutes - Grid, box model, project understanding
@@ -150,17 +94,6 @@ dreams-dashboard/
 - **Phase 3 (Interactions)**: 35 minutes - Transitions, states, polish
 
 **Total**: ~90 minutes including experimentation and customization
-
-## 🎉 Success Indicators
-
-You'll know you're succeeding when:
-
-- Your dreams are arranged in a responsive grid that adapts to window size
-- Each card has clear visual hierarchy and proper spacing
-- Different dream types (past/future/recurring) have distinct visual treatments
-- Hover interactions feel smooth and professional
-- You can explain how CSS Grid, Flexbox, and Box Model work together
-- You understand how your CSS file becomes a visual interface in the browser
 
 ## 🚀 Extension Ideas
 
@@ -174,4 +107,4 @@ If you finish early or want to keep exploring:
 
 ---
 
-**Remember**: Every professional developer started with the same CSS fundamentals you're mastering now. This dashboard isn't just about transitions - it's about understanding how all the CSS systems work together to create engaging, functional interfaces. Enjoy building your dream world! 🌙✨
+Enjoy building your dream world! 🌙✨

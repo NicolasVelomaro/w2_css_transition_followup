@@ -103,9 +103,9 @@ body {
 /* TODO: Complete the .dreams-grid styles below */
 .dreams-grid {
   /* Uncomment and experiment with these grid properties: */
-  /* display: grid; */
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  /* gap: var(--grid-gap); */
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: var(--grid-gap);
 
   /*
     💡 Questions to explore:
@@ -129,10 +129,10 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
   /* TODO: Add padding using our CSS custom property */
-  /* padding: var(--card-padding); */
+  padding: var(--card-padding);
 
   /* We'll add transitions here in Phase 3! */
-  /* cursor: pointer; */
+  cursor: pointer;
 
   /*
     🔍 Box Model Exploration:
@@ -153,19 +153,19 @@ body {
 /* Past dreams get a subtle left border */
 .past-dream {
   /* TODO: Add a subtle left border */
-  /* border-left: 4px solid var(--text-secondary); */
+  border-left: 4px solid var(--text-secondary);
 }
 
 /* Future dreams get a different border treatment */
 .future-dream {
   /* TODO: Add a left border with a different color */
-  /* border-left: 4px solid var(--learning-color); */
+  border-left: 4px solid var(--learning-color);
 }
 
 /* Recurring dreams get special styling */
 .recurring-dream {
   /* TODO: Add a subtle background tint for recurring dreams */
-  /* background: linear-gradient(135deg, var(--card-bg) 0%, rgba(155, 89, 182, 0.2) 100%); */
+   background: linear-gradient(135deg, var(--card-bg) 0%, rgba(155, 89, 182, 0.2) 100%);
 }
 
 /* ==========================================================================
@@ -207,12 +207,12 @@ body {
 
 .dream-header {
   /* TODO: Create a flexible header layout */
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* justify-content: space-between; */
-  /* align-items: baseline; */
-  /* gap: 0.5rem; */
-  /* margin-bottom: 1rem; */
+   display: flex; 
+   flex-wrap: wrap; 
+   justify-content: space-between; 
+   align-items: baseline;
+   gap: 0.5rem; 
+   margin-bottom: 1rem; 
 
   /*
     🔍 Flexbox Exploration:
@@ -271,9 +271,11 @@ body {
 
 .dream-tags {
   /* TODO: Create a flexible tag container */
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* gap: 0.5rem; */
+  display: flex; 
+   flex-wrap: wrap; 
+   
+   gap: 0.5rem; 
+   
 
   /*
     🔍 Flex Wrap Exploration:
@@ -321,36 +323,36 @@ body {
    ========================================================================== */
 
 /* Adventure dreams - bold and energetic */
-.adventure .tag {
+.adventure {
   background: var(--adventure-color);
 }
 
 /* Learning dreams - calm and focused */
-.learning .tag {
+.learning {
   background: var(--learning-color);
 }
 
 /* Peaceful dreams - gentle and soothing */
-.peaceful .tag {
+.peaceful {
   background: var(--peaceful-color);
 }
 
 /* Funny dreams - bright and playful */
-.funny .tag {
+.funny {
   background: var(--funny-color);
 }
 
 /* Recurring dreams - mysterious and special */
-.recurring .tag {
+.recurring {
   background: var(--recurring-color);
 }
 
 /* TODO: Experiment with your own dream type colors! */
-/*
-.your-dream-type.tag {
-    background: #your-color-here;
+
+.heaven {
+    background: rgb(136, 141, 67);
 }
-*/
+
 
 /* ==========================================================================
    🎯 TASK 7: Enhanced Card Styling Based on Dream Types
@@ -362,19 +364,19 @@ body {
 /* Adventure dreams get a subtle accent */
 .adventure-dream {
   /* TODO: Add a subtle box-shadow with the adventure color */
-  /* box-shadow: 0 2px 8px rgba(231, 76, 60, 0.2); */
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.2);
 }
 
 /* Learning dreams get a different accent */
 .learning-dream {
   /* TODO: Add a subtle box-shadow with the learning color */
-  /* box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2); */
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
 }
 
 /* Peaceful dreams get their own treatment */
 .peaceful-dream {
   /* TODO: Add a subtle box-shadow with the peaceful color */
-  /* box-shadow: 0 2px 8px rgba(39, 174, 96, 0.2); */
+  box-shadow: 0 2px 8px rgba(39, 174, 96, 0.2);
 }
 
 /*
@@ -437,7 +439,7 @@ body {
 .dream-card {
   /* Add transition to the base element (not the :hover state!) */
   /* TODO: Uncomment the transition below */
-  /* transition: transform var(--transition-smooth), box-shadow var(--transition-smooth); */
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 
   /*
     🔍 Why transitions go on the base element:
@@ -449,8 +451,8 @@ body {
 
 .dream-card:hover {
   /* TODO: Add hover effects */
-  /* transform: translateY(-4px); */
-  /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); */
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 
   /*
     🔍 Transform vs Layout Properties:
@@ -462,12 +464,12 @@ body {
 
 .dream-title {
   /* TODO: Make the color of the title transition */
-  /* transition: color var(--transition-quick); */
+  transition: color var(--transition-quick);
 }
 
 .dream-card.dream-title {
   /* TODO: Make titles slightly more prominent on hover */
-  /* color: var(--learning-color); */
+  color: var(--learning-color);
 
   /*
     🔍 Nested Element Transitions:
@@ -487,13 +489,13 @@ body {
 .tag {
   /* Add transitions to tags for smooth color changes */
   /* TODO: Add transition for smooth tag interactions */
-  /* transition: background-color var(--transition-quick), transform var(--transition-quick); */
+  transition: background-color var(--transition-quick), transform var(--transition-quick);
 }
 
 .tag:hover {
   /* TODO: Make tags more prominent when hovered */
-  /* transform: scale(1.05); */
-  /* cursor: pointer; */
+  transform: scale(1.05);
+  cursor: pointer;
 
   /*
     🔍 Scale Transform:
@@ -504,14 +506,14 @@ body {
 }
 
 /* Specific hover effects for different tag types */
-.adventure.tag:hover {
+.adventure:hover {
   /* TODO: Adventure tags get more vibrant on hover */
-  /* background-color: #c0392b; */ /* Darker adventure color */
+  background-color: #c0392b; /* Darker adventure color */
 }
 
-.learning.tag:hover {
+.learning:hover {
   /* TODO: Learning tags get more vibrant on hover */
-  /* background-color: #2980b9; */ /* Darker learning color */
+  background-color: #2980b9;  /* Darker learning color */
 }
 
 /* ==========================================================================
@@ -524,22 +526,22 @@ body {
 /* Adventure dreams: Bold, energetic movements */
 .adventure-dream:hover {
   /* TODO: Adventure dreams get more dramatic effects */
-  /* transform: translateY(-6px) scale(1.02); */
-  /* box-shadow: 0 12px 30px rgba(231, 76, 60, 0.2); */
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(231, 76, 60, 0.2); 
 }
 
 /* Learning dreams: Gentle, focused interactions */
 .learning-dream:hover {
   /* TODO: Learning dreams get subtle, calm effects */
-  /* transform: translateY(-3px); */
-  /* box-shadow: 0 6px 20px rgba(52, 152, 219, 0.2); */
+  transform: translateY(-3px); 
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.2);
 }
 
 /* Peaceful dreams: Soft, soothing movements */
 .peaceful-dream:hover {
   /* TODO: Peaceful dreams get very gentle effects */
-  /* transform: translateY(-2px); */
-  /* box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2); */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
 }
 
 /* ==========================================================================
@@ -562,9 +564,9 @@ body {
 
 .dream-card:focus {
   /* TODO: Make focus states clear and accessible */
-  /* outline: 2px solid var(--learning-color); */
-  /* outline-offset: 2px; */
-  /* transform: translateY(-2px); */
+  outline: 2px solid var(--learning-color); 
+  outline-offset: 2px;
+  transform: translateY(-2px);
 
   /*
     🔍 Focus vs Hover:
@@ -574,7 +576,10 @@ body {
     */
 }
 
-/* ==========================================================================
+/* ====================================tag
+tag
+tag
+tag======================================
    🎯 BONUS TASK: Create Your Own Nightmare Dream! 🕷️
 
    Time to get creative! Add a nightmare to your dreams dashboard.
@@ -602,21 +607,25 @@ body {
 .nightmare-dream {
   /* Your nightmare base styling */
   /* Maybe a darker background or special border? */
+  background: linear-gradient(360deg, #000000 0%, #f50303 100%);
 }
 
 .nightmare-dream:hover {
   /* Your nightmare hover effects */
   /* Perhaps a subtle shake or color shift? */
+  background: linear-gradient(360deg ,rgb(54, 6, 54)0%, rgb(255, 0, 106) 100%);
 }
 
-.nightmare-dream .tag {
+.nightmare-dream.tag {
   /* Special tag styling for nightmares */
   /* Maybe desaturated colors or different shapes? */
+  background: linear-gradient(180deg, black 0%, red 100%);
 }
 
-.nightmare .tag {
+.nightmare.tag {
   /* If you create a "nightmare" tag type */
   /* What color represents nightmares to you? */
+  background-color: rgb(95, 64, 7);
 }
 
 /* ==========================================================================
